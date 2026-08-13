@@ -1,6 +1,6 @@
 const BASE = document.documentElement.dataset.base || ".";
 const CITATION = `作品：《English OS》
-原著作者：Han Laining（韩来凝）
+原著作者：Lane Han
 项目地址：https://github.com/hanlaining/English-OS
 在线阅读：https://hanlaining.github.io/English-OS/
 UI 与技术实现协作：OpenAI Codex
@@ -172,7 +172,7 @@ function chapterShell(chapter) {
       <div class="tree-children"><a class="${item.id === chapter.id ? "active" : ""}" href="${chapterHref(item)}">${item.cn}${item.status === "planned" ? " · 规划中" : " · 完整正文"}</a></div>
     </div>`).join("");
   const navLink = (item, direction) => item ? `<a href="${chapterHref(item)}">${direction === "previous" ? "<span>←</span>" : ""}<div><small>${direction.toUpperCase()}</small><b>Chapter ${item.id} · ${item.title}</b></div>${direction === "next" ? "<span>→</span>" : ""}</a>` : "<span></span>";
-  const content = chapter.status === "planned" ? `<section class="planned"><div><div class="planned-mark">PLANNED</div><h2>本章正在规划中</h2><p>本页仅标示章节结构与创作状态。正式正文将由 Han Laining（韩来凝）完成，网站不会代为补写。</p></div></section>` : "";
+  const content = chapter.status === "planned" ? `<section class="planned"><div><div class="planned-mark">PLANNED</div><h2>本章正在规划中</h2><p>本页仅标示章节结构与创作状态。正式正文将由 Lane Han 完成，网站不会代为补写。</p></div></section>` : "";
   return `
     <a class="skip-link" href="#main">跳到正文</a><div class="orbit" aria-hidden="true"></div>
     <header class="topbar"><a class="brand" href="${BASE}/index.html"><span>English</span><i>OS</i></a><div class="edition">A PERSONAL LANGUAGE SYSTEM</div><nav class="top-actions"><a class="top-link" href="${BASE}/about.html">原著与协作</a><a class="top-link" href="${BASE}/copyright.html">版权说明</a><div class="reading-progress"><span>READING</span><b data-reading-percent>0%</b></div><button class="circle-button" data-theme-toggle aria-label="切换主题">☼</button><button class="menu-button" data-open-tree aria-label="打开知识树"><span class="menu-lines"></span></button></nav></header>
@@ -181,11 +181,11 @@ function chapterShell(chapter) {
       <div class="drawer-backdrop" data-close-tree></div>
       <main class="reader" id="main">
         <div class="mobile-chapterbar"><button type="button" data-open-tree aria-label="打开知识树">☷</button><span>CHAPTER ${String(chapter.id).padStart(2, "0")}</span><b data-reading-percent>0%</b></div>
-        <header class="chapter-hero"><p class="eyebrow">Chapter ${String(chapter.id).padStart(2, "0")} · ${chapter.status === "planned" ? "Planned" : "English OS v1.0"}</p><h1>${chapter.title}<em>${chapter.cn}</em></h1><p class="chapter-meta"><span>原著作者：Han Laining（韩来凝）</span><span>${chapter.status === "planned" ? "状态：规划中" : "版本：v0.1 · 2026-08"}</span></p></header>
+        <header class="chapter-hero"><p class="eyebrow">Chapter ${String(chapter.id).padStart(2, "0")} · ${chapter.status === "planned" ? "Planned" : "English OS v1.0"}</p><h1>${chapter.title}<em>${chapter.cn}</em></h1><p class="chapter-meta"><span>原著作者：Lane Han</span><span>${chapter.status === "planned" ? "状态：规划中" : "版本：v0.1 · 2026-08"}</span></p></header>
         <article class="markdown-body" data-chapter="${chapter.id}">${content}</article>
         <div class="chapter-tools"><span class="reading-progress">全书完成进度 <b data-global-progress>0%</b></span><button class="complete-button" type="button" data-complete aria-pressed="false">标记为已完成</button></div>
         <nav class="chapter-nav" aria-label="章节导航">${navLink(previous, "previous")}${navLink(next, "next")}</nav>
-        <footer class="attribution">《English OS》学习体系与正文由 Han Laining（韩来凝）原创并维护。网站 UI 与技术实现由作者在 OpenAI Codex 协作下完成。<a href="${BASE}/copyright.html">版权、转载与引用说明</a>。</footer>
+        <footer class="attribution">《English OS》学习体系与正文由 Lane Han 原创并维护。网站 UI 与技术实现由作者在 OpenAI Codex 协作下完成。<a href="${BASE}/copyright.html">版权、转载与引用说明</a>。</footer>
       </main>
       <aside class="chapter-rail"><div class="rail-label">IN THIS CHAPTER</div><nav class="rail-nav" data-rail-nav></nav><div class="rail-progress">READING PROGRESS<b data-reading-percent>0%</b></div></aside>
     </div>

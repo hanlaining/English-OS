@@ -1,6 +1,6 @@
 ---
 Title: Chapter 1 Kernel
-Author: Han Laining
+Author: Lane Han
 Project: English OS
 Version: v0.1
 Created: 2026-08

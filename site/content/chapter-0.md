@@ -1,6 +1,6 @@
 ---
 Title: Chapter 0 Introduction
-Author: Han Laining
+Author: Lane Han
 Project: English OS
 Version: v0.1
 Created: 2026-08
